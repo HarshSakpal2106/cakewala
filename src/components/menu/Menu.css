@@ -1,0 +1,334 @@
+.menu-hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(to bottom, #fff7f0, #fffaf4);
+}
+
+.menu-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #803e00;
+    margin: 8px 0 14px;
+}
+
+.menu-subtitle {
+    font-size: 15px;
+    color: #7a6358;
+    max-width: 460px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+}
+
+.menu-search-wrap {
+    position: relative;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.menu-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #7a6358;
+}
+
+.menu-search {
+    width: 100%;
+    padding: 13px 44px;
+    border: 1.5px solid #e8d5c8;
+    border-radius: 50px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #2c1810;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.menu-search:focus {
+    border-color: #c97b63;
+    box-shadow: 0 0 0 3px rgba(201, 123, 99, 0.12);
+}
+
+.menu-search-clear {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 13px;
+    color: #7a6358;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-search-clear:hover {
+    color: #2c1810;
+}
+
+.menu-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 40px;
+    margin-bottom: 10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-categories {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.menu-cat-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid #e8d5c8;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7a6358;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.menu-cat-btn:hover,
+.menu-cat-btn.active {
+    background: #803e00;
+    color: #fff;
+    border-color: #803e00;
+}
+
+.sort-select {
+    padding: 9px 14px;
+    border: 1.5px solid #e8d5c8;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #2c1810;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.sort-select:focus {
+    border-color: #c97b63;
+}
+
+.menu-results-count {
+    font-size: 13px;
+    color: #7a6358;
+    padding: 0 40px;
+    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 24px;
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e8d5c8;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0px 32px rgba(0, 0, 0, 0.5);
+}
+
+.menu-card-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-card-img img {
+    transform: scale(1.05);
+}
+
+.menu-card-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #803e00;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.menu-card-info {
+    padding: 16px;
+}
+
+.menu-card-cat {
+    font-size: 11px;
+    font-weight: 700;
+    color: #c97b63;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.menu-card-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2c1810;
+    margin: 0 0 6px;
+}
+
+.menu-card-desc {
+    font-size: 13px;
+    color: #7a6358;
+    line-height: 1.6;
+    margin: 0 0 14px;
+}
+
+.menu-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-card-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #8b4a3a;
+}
+
+.menu-card-btn {
+    background: #803e00;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.menu-card-btn:hover {
+    background: #c97b63;
+    transform: translateY(-1px);
+}
+
+.menu-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    color: #7a6358;
+}
+
+.menu-empty-icon {
+    font-size: 52px;
+    margin-bottom: 16px;
+    opacity: 0.4;
+}
+
+.menu-empty h3 {
+    font-size: 20px;
+    color: #2c1810;
+    margin: 0 0 8px;
+}
+
+.menu-empty p {
+    font-size: 14px;
+    margin: 0 0 20px;
+}
+
+.menu-empty-reset {
+    padding: 10px 24px;
+    background: #803e00;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-empty-reset:hover {
+    background: #c97b63;
+}
+
+.menu-custom-banner {
+    background: linear-gradient(135deg, #3D1F10 0%, #803e00 100%);
+    padding: 60px 40px;
+}
+
+.menu-custom-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.menu-custom-text h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.menu-custom-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.menu-custom-btn {
+    text-decoration: none;
+    background: #fff;
+    color: #803e00;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.menu-custom-btn:hover {
+    background: #fdbd81;
+    transform: translateY(-2px);
+}

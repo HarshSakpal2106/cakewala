@@ -1,0 +1,343 @@
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #ffffff 0%, #ffd0b3 100%);
+  padding: 100px 0px;
+  box-sizing: border-box;
+}
+
+.home-section h1 {
+  font-size: 52px;
+  color: #3d1f10;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0px;
+}
+
+.home-section h1 em {
+  color: var(--primary-color);
+}
+
+.home-section p {
+  font-size: 16px;
+  color: var(--primary-color);
+  text-align: center;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.home-section .home-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.home-section .home-buttons a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #803e00;
+  height: 50px;
+  width: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: 1px solid #803e00;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.home-section .home-buttons a:hover {
+  transform: translateY(-10%);
+}
+
+.home-section .home-buttons #explore-menu-btn {
+  background-color: #803e00;
+  color: white;
+}
+
+.home-section .home-buttons #explore-menu-btn:hover {
+  background-color: #fdbd81;
+  color: #803e00;
+}
+
+.home-section .home-buttons #place-custom-order-btn:hover {
+  background-color: #fdbd81;
+}
+
+.section-eyebrow {
+  font-size: 20px;
+  color: #c97b63;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 36px;
+  color: #2c1810;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #c8860a;
+  margin: 10px auto 20px;
+}
+
+.favourites-scetion {
+  padding: 50px 0px;
+  box-sizing: border-box;
+}
+
+.favourites-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.favourites-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8d5c8;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.favourites-card:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+}
+
+.favourites-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.favourites-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.favourites-card:hover .favourites-image img {
+  transform: scale(1.05);
+}
+
+.favourites-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.favourites-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c1810;
+  margin: 0;
+}
+
+.favourites-info>span {
+  font-size: 14px;
+  color: #7a6358;
+  line-height: 1.6;
+}
+
+.favourites-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.favourites-footer span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #8b4a3a;
+}
+
+.favourites-footer a {
+  background: #8b4a3a;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.favourites-footer a:hover {
+  background: #c97b63;
+  transform: translateY(-1px);
+}
+
+#view-all-btn {
+  margin: 30px auto;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #803e00;
+  color: white;
+  height: 50px;
+  width: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#view-all-btn:hover {
+  background-color: #fdbd81;
+  color: #803e00;
+  border: 1px solid #803e00;
+}
+
+.why-section {
+  background-color: #ffebc5;
+  box-sizing: border-box;
+  padding: 30px 0px;
+}
+
+.why-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  width: 70%;
+  margin: 40px auto;
+  justify-items: center;
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #e8d5c8;
+  overflow: hidden;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.why-card:hover {
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.75);
+}
+
+.why-card .why-icon {
+  font-size: 40px;
+}
+
+.why-card h3 {
+  font-size: 20px;
+  color: #803e00
+}
+
+.why-card span {
+  text-align: center;
+  width: 75%;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.testimonial-section {
+  padding: 30px 0px 50px;
+  background: linear-gradient(135deg, #3D1F10 0%, #5C2E18 100%);
+}
+
+.testimonial-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 29px;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.quote-icon {
+  font-size: 40px;
+  color: #D4A843;
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #D4A843;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 13px;
+}
+
+.testimonial-text {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8B4A0, #C97B63);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.author-name {
+  color: #D4A843;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.author-label {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  margin-top: 2px;
+}
