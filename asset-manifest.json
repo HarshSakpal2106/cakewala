@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/cakewala/static/css/main.9fb5571f.css",
-    "main.js": "/cakewala/static/js/main.b48455ff.js",
+    "main.js": "/cakewala/static/js/main.e0dd5629.js",
     "static/js/453.3e3c3c8b.chunk.js": "/cakewala/static/js/453.3e3c3c8b.chunk.js",
     "static/media/aboutus-img.webp": "/cakewala/static/media/aboutus-img.6d137070603a0bb45282.webp",
     "static/media/fav-cake-1.webp": "/cakewala/static/media/fav-cake-1.9f893f806425f6cfb77d.webp",
     "static/media/logo.svg": "/cakewala/static/media/logo.765630dca272a393f8b8d78abdac2fc3.svg",
     "index.html": "/cakewala/index.html",
     "main.9fb5571f.css.map": "/cakewala/static/css/main.9fb5571f.css.map",
-    "main.b48455ff.js.map": "/cakewala/static/js/main.b48455ff.js.map",
+    "main.e0dd5629.js.map": "/cakewala/static/js/main.e0dd5629.js.map",
     "453.3e3c3c8b.chunk.js.map": "/cakewala/static/js/453.3e3c3c8b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9fb5571f.css",
-    "static/js/main.b48455ff.js"
+    "static/js/main.e0dd5629.js"
   ]
 }
