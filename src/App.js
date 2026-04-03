@@ -8,7 +8,7 @@ import Auth from './components/auth/Auth';
 import Cart from './components/cart/Cart';
 import Footer from './components/footer/Footer';
 import Admin from './components/admin/Admin';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 function AppContent() {
   const location = useLocation();
@@ -17,7 +17,7 @@ function AppContent() {
   return (
     <div className="App">
       {!isAdmin && <Header />}
-      <Routes basename="/cakewala">
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/aboutus" element={<Aboutus />} />
