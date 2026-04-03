@@ -17,7 +17,7 @@ function AppContent() {
   return (
     <div className="App">
       {!isAdmin && <Header />}
-      <Routes>
+      <Routes basename="/cakewala">
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/aboutus" element={<Aboutus />} />
