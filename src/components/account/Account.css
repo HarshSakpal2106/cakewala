@@ -1,0 +1,235 @@
+.account-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    box-sizing: border-box;
+}
+
+.logout-btn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    font-size: 20px;
+    color: var(--primary-color);
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.account-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #3D1F10 0%, #803e00 100%);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 28px;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.account-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.account-profile-info {
+    flex: 1;
+}
+
+.account-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+}
+
+.account-email {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 0 10px;
+}
+
+.account-badge {
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    margin-left: auto;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 24px;
+}
+
+.account-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e8d5c8;
+    padding: 28px;
+    box-shadow: 0 3px 14px rgba(61, 31, 16, 0.07);
+}
+
+.account-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2c1810;
+    margin: 0 0 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e8d5c8;
+}
+
+.account-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.account-detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.account-detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(201, 123, 99, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.account-detail-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #c97b63;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3px;
+}
+
+.account-detail-val {
+    font-size: 14px;
+    color: #2c1810;
+    font-weight: 500;
+}
+
+.order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0e8e0;
+    gap: 12px;
+}
+
+.order-row:last-child {
+    border-bottom: none;
+}
+
+.order-row-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.order-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #fdf0e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.order-item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c1810;
+}
+
+.order-item-meta {
+    font-size: 12px;
+    color: #7a6358;
+    margin-top: 2px;
+}
+
+.order-row-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.order-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c1810;
+}
+
+.order-status {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-delivered {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+}
+
+.status-ontheway {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}

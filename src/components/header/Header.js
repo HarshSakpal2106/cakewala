@@ -3,7 +3,7 @@ import logo from "../../assets/logo.svg";
 import "./Header.css";
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ user }) {
   return (
     <header className="header">
       <img src={logo} className="header-logo" alt="CakeWala" />
@@ -16,8 +16,20 @@ function Header() {
         </ul>
       </nav>
       <div className="auth-links">
-        <Link to="/cart"><i class="fa-solid fa-cart-shopping"></i>Cart</Link>
-        <Link to="/auth" id="loginBtn"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</Link>
+        <Link to="/cart">
+          <i className="fa-solid fa-cart-shopping"></i>Cart
+        </Link>
+        {user ? (
+          <>
+            <Link to="/account" id="loginBtn">
+              <i className="fa-solid fa-user"></i>Account
+            </Link>
+          </>
+        ) : (
+          <Link to="/auth" id="loginBtn">
+            <i className="fa-solid fa-arrow-right-to-bracket"></i>Login
+          </Link>
+        )}
       </div>
     </header>
   );

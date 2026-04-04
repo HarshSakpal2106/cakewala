@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Auth.css";
 import logo from "../../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
-function Auth() {
+function Auth({ setUser }) {
   useEffect(() => {
     document.title = "User Login";
   }, []);
@@ -12,12 +13,15 @@ function Auth() {
   const [registerForm, setRegisterForm] = useState({ name: "", email: "", password: "", confirm: "" });
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     setErr("");
+    setUser({ name: loginForm.email.split("@")[0], email: loginForm.email });
     setSuccess("Logged in successfully! Welcome back");
-    setTimeout(() => setSuccess(""), 4000);
+    setTimeout(() => setSuccess(""), 1500);
+    navigate("/account");
   };
 
   const handleRegister = (e) => {
@@ -29,8 +33,9 @@ function Auth() {
       setErr("Password must be at least 6 characters."); return;
     }
     setErr("");
-    setSuccess("Account created! Welcome to CakeWala 🎉");
-    setTimeout(() => setSuccess(""), 4000);
+    setUser({ name: registerForm.name, email: registerForm.email });
+    setSuccess("Account created! Welcome to CakeWala!");
+    setTimeout(() => setSuccess(""), 1500);
   };
 
   return (
