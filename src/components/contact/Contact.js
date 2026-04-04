@@ -3,17 +3,43 @@ import "./Contact.css";
 
 function Contact() {
     useEffect(() => {
-    document.title = "Contact  Us";
-  }, []);
+        document.title = "Contact Us";
+    }, []);
 
-    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+    const [form, setForm] = useState({ name: "", number: "", subject: "", message: "" });
     const [sent, setSent] = useState(false);
+    const [err, setErr] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSent(true);
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setSent(false), 5000);
+
+        try {
+            const response = await fetch("https://formspree.io/f/mzdkkpqw", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    name: form.name,
+                    number: form.number,
+                    subject: form.subject,
+                    message: form.message,
+                })
+            });
+
+            if (response.ok) {
+                setSent(true);
+                setErr("");
+                setForm({ name: "", number: "", subject: "", message: "" });
+                setTimeout(() => setSent(false), 5000);
+            } else {
+                setErr("Something went wrong. Please try again.");
+            }
+
+        } catch (error) {
+            setErr("Failed to send. Please try again.");
+        }
     };
 
     return (
@@ -73,14 +99,14 @@ function Contact() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="form-label">Email Address</label>
+                                <label className="form-label">Phone Number</label>
                                 <input
                                     className="form-input"
-                                    type="email"
+                                    type="tel"
                                     required
-                                    placeholder="you@email.com"
-                                    value={form.email}
-                                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                    placeholder="Enter Whatsapp no for quick response"
+                                    value={form.number}
+                                    onChange={(e) => setForm({ ...form, number: e.target.value })}
                                 />
                             </div>
                         </div>
@@ -103,6 +129,7 @@ function Contact() {
                                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                             />
                         </div>
+                        {err && <div className="form-error">{err}</div>}
                         <button type="submit" className="btn-submit">
                             Send Message
                         </button>
@@ -113,7 +140,6 @@ function Contact() {
                         )}
                     </form>
                 </div>
-
             </section>
 
             <section className="contact-bottom">
