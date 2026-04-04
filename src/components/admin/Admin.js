@@ -1,11 +1,66 @@
 import "./Admin.css";
 import Logo from "../../assets/logo.svg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Admin() {
     useEffect(() => {
         document.title = "CakeWala - Admin";
     }, []);
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [adminId, setAdminId] = useState("");
+    const [adminPassword, setAdminPassword] = useState("");
+
+    const ADMIN_ID = "cakewala_admin";
+    const ADMIN_PASSWORD = "cakewala@123";
+
+    useEffect(() => {
+        const isAdmin = localStorage.getItem("isAdmin");
+        if (isAdmin === "true") {
+            setIsLoggedIn(true);
+        }
+    }, []);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        if (adminId === ADMIN_ID && adminPassword === ADMIN_PASSWORD) {
+            setIsLoggedIn(true);
+            localStorage.setItem("isAdmin", "true");
+        } else {
+            document.querySelector(".admin-login-alert").style.display = "block";
+        }
+    };
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+        localStorage.removeItem("isAdmin");
+        setAdminId("");
+        setAdminPassword("");
+    };
+
+    if (!isLoggedIn) {
+        return (
+            <div className="admin-login-container page">
+                <div className="admin-login-box">
+                    <h1 className="admin-login-h1">Admin Login</h1>
+                    <form onSubmit={handleLogin}>
+                        <div className="admin-login-field">
+                            <label htmlFor="adminId">Admin ID</label>
+                            <input type="text" id="adminId" value={adminId} onChange={(e) => setAdminId(e.target.value)} required />
+                        </div>
+                        <div className="admin-login-field">
+                            <label htmlFor="adminPassword">Password</label>
+                            <input type="password" id="adminPassword" value={adminPassword} onChange={(e) => setAdminPassword(e.target.value)} required />
+                        </div>
+                        <button type="submit" className="admin-login-btn">Login</button>
+                        <div className="admin-login-alert">
+                            Invalid Credentials!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        );
+    }
 
     const orders = [
         {
@@ -105,6 +160,7 @@ function Admin() {
             <header className="admin-header">
                 <img src={Logo} alt="CakeWala Logo" className="admin-header-logo" />
                 <h1 className="admin-header-h1">Admin Dashboard</h1>
+                <button className="admin-logout-btn" onClick={handleLogout}>Logout</button>
             </header>
             <section className="order-section">
                 <h1 className="order-section-h1">Orders</h1>
