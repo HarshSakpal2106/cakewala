@@ -38,3 +38,36 @@
     color: #803e00;
     border: 1px solid #803e00;
 }
+
+.cart-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    min-height: 70vh;
+}
+
+.cart-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #803e00;
+    margin: 0 0 30px;
+}
+
+.cart-empty-text {
+    font-size: 15px;
+    color: #7a6358;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.cart-empty-text a {
+    color: #803e00;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.cart-empty-text a:hover {
+    color: #c97b63;
+}

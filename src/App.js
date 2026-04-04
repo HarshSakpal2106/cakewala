@@ -26,7 +26,7 @@ function AppContent({ user, setUser }) {
         <Route path="/contact" element={<Contact />} />
         <Route path="/auth" element={<Auth setUser={setUser} />} />
         <Route path="/account" element={<Account user={user} setUser={setUser} />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart user={user} />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
       {!isAdmin && <Footer />}
