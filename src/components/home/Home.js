@@ -1,7 +1,10 @@
 import "./Home.css";
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
-import favCakeImg from "../../assets/fav-cake-1.webp";
+import favCakeImg1 from "../../assets/chocolate_truffle_cake.webp";
+import favCakeImg2 from "../../assets/blueberry_cheesecake.jpg";
+import favCakeImg3 from "../../assets/butterscotch_cake.webp";
+import favCakeImg4 from "../../assets/tres_laches_cake.jpg";
 
 function Home() {
   useEffect(() => {
@@ -24,52 +27,52 @@ function Home() {
         <div className="favourites-container">
           <div className="favourites-card">
             <div className="favourites-image">
-              <img src={favCakeImg} alt="Favourites" />
+              <img src={favCakeImg1} alt="Favourites" />
             </div>
             <div className="favourites-info">
               <h3>Chocolate Truffle Cake</h3>
-              <span>Indulge in pure bliss with our rich and decadent chocolate truffle cake.</span>
+              <span>Rich layers of dark chocolate with silky ganache frosting.</span>
               <div className="favourites-footer">
-                <span>&#8377; 299</span>
+                <span>&#8377; 649</span>
                 <Link to="#">Add to Cart</Link>
               </div>
             </div>
           </div>
           <div className="favourites-card">
             <div className="favourites-image">
-              <img src={favCakeImg} alt="Favourites" />
+              <img src={favCakeImg2} alt="Favourites" />
             </div>
             <div className="favourites-info">
-              <h3>Chocolate Truffle Cake</h3>
-              <span>Indulge in pure bliss with our rich and decadent chocolate truffle cake.</span>
+              <h3>Blueberry Cheesecake</h3>
+              <span>Delightful blend of fresh blueberries and creamy cheesecake.</span>
               <div className="favourites-footer">
-                <span>&#8377; 299</span>
+                <span>&#8377; 599</span>
                 <Link to="#">Add to Cart</Link>
               </div>
             </div>
           </div>
           <div className="favourites-card">
             <div className="favourites-image">
-              <img src={favCakeImg} alt="Favourites" />
+              <img src={favCakeImg3} alt="Favourites" />
             </div>
             <div className="favourites-info">
-              <h3>Chocolate Truffle Cake</h3>
-              <span>Indulge in pure bliss with our rich and decadent chocolate truffle cake.</span>
+              <h3>Butterscotch Delight</h3>
+              <span>Rich and creamy butterscotch cake with a hint of vanilla.</span>
               <div className="favourites-footer">
-                <span>&#8377; 299</span>
+                <span>&#8377; 529</span>
                 <Link to="#">Add to Cart</Link>
               </div>
             </div>
           </div>
           <div className="favourites-card">
             <div className="favourites-image">
-              <img src={favCakeImg} alt="Favourites" />
+              <img src={favCakeImg4} alt="Favourites" />
             </div>
             <div className="favourites-info">
-              <h3>Chocolate Truffle Cake</h3>
-              <span>Indulge in pure bliss with our rich and decadent chocolate truffle cake.</span>
+              <h3>Tres Leches</h3>
+              <span>A moist and flavorful cake soaked in three types of milk.</span>
               <div className="favourites-footer">
-                <span>&#8377; 299</span>
+                <span>&#8377; 559</span>
                 <Link to="#">Add to Cart</Link>
               </div>
             </div>
