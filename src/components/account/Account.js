@@ -25,9 +25,13 @@ function Account({ user, setUser }) {
 
     const handleLogout = () => {
         setUser(null);
-        localStorage.removeItem("isAdmin"); 
+        localStorage.removeItem("isAdmin");
         navigate("/auth");
     };
+
+    useEffect(() => {
+        document.title = "Your Account";
+    }, []);
 
     return (
         <div className="account-container page">
