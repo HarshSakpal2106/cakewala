@@ -341,3 +341,40 @@
   font-size: 12px;
   margin-top: 2px;
 }
+
+@media (max-width: 768px) {
+  .home-section {
+    padding: 60px 20px;
+  }
+  .home-section h1 {
+    font-size: 32px;
+  }
+  .home-section .home-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .home-section .home-buttons a {
+    width: 100%;
+    max-width: 300px;
+  }
+  .section-title {
+    font-size: 28px;
+    padding: 0 20px;
+  }
+  .favourites-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  .why-container {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    gap: 15px;
+  }
+  .testimonial-section {
+    padding: 40px 20px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}

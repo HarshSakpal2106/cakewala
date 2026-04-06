@@ -1,20 +1,33 @@
 import React from "react";
 import "./Account.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+const API = "http://localhost/cakewala/backend";
 
 function Account({ user, setUser }) {
     const navigate = useNavigate();
 
+    const [orders, setOrders] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (user) {
+            fetch(`${API}/orders.php?user_id=${user.id}`)
+                .then(r => r.json())
+                .then(data => {
+                    setOrders(data);
+                    setLoading(false);
+                })
+                .catch(() => setLoading(false));
+        }
+    }, [user]);
+
     const handleLogout = () => {
         setUser(null);
+        localStorage.removeItem("isAdmin"); 
         navigate("/auth");
     };
-
-    const orders = [
-        { id: "#CW1042", item: "Chocolate Truffle Cake", date: "22 Mar 2025", status: "Delivered", price: "₹649" },
-        { id: "#CW1038", item: "Red Velvet Cake", date: "10 Mar 2025", status: "Delivered", price: "₹599" },
-        { id: "#CW1056", item: "Mango Coconut Layer", date: "27 Mar 2025", status: "On the Way", price: "₹679" },
-    ];
 
     return (
         <div className="account-container page">
@@ -52,30 +65,36 @@ function Account({ user, setUser }) {
                         <div className="account-detail-icon">📞</div>
                         <div>
                             <div className="account-detail-label">Phone Number</div>
-                            <div className="account-detail-val">+91 98765 43210</div>
+                            <div className="account-detail-val">{user?.phone || "—"}</div>
                         </div>
                     </div>
                 </div>
 
                 <div className="account-card">
                     <h3 className="account-card-title">Order History</h3>
-                    {orders.map(order => (
-                        <div key={order.id} className="order-row">
-                            <div className="order-row-left">
-                                <div className="order-icon">🎂</div>
-                                <div>
-                                    <div className="order-item-name">{order.item}</div>
-                                    <div className="order-item-meta">{order.id} · {order.date}</div>
+                    {loading ? (
+                        <p>Loading your orders...</p>
+                    ) : orders.length === 0 ? (
+                        <p>No orders placed yet.</p>
+                    ) : (
+                        orders.map(order => (
+                            <div key={order.id} className="order-row">
+                                <div className="order-row-left">
+                                    <div className="order-icon">🎂</div>
+                                    <div>
+                                        <div className="order-item-name">{order.cake_name}</div>
+                                        <div className="order-item-meta">{order.order_ref} · {new Date(order.created_at).toLocaleDateString()}</div>
+                                    </div>
+                                </div>
+                                <div className="order-row-right">
+                                    <div className="order-price">₹{order.total_price}</div>
+                                    <span className={`order-status status-${(order.status || 'pending').toLowerCase().replace(/\s+/g, '')}`}>
+                                        {order.status}
+                                    </span>
                                 </div>
                             </div>
-                            <div className="order-row-right">
-                                <div className="order-price">{order.price}</div>
-                                <span className={`order-status ${order.status === "Delivered" ? "status-delivered" : "status-ontheway"}`}>
-                                    {order.status}
-                                </span>
-                            </div>
-                        </div>
-                    ))}
+                        ))
+                    )}
                 </div>
 
             </div>

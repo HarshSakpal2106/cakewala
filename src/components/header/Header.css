@@ -72,3 +72,34 @@ html {
     background-color: var(--hover-color);
     color: #653100;
 }
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 15px;
+        height: 70px;
+    }
+    .header .header-logo {
+        height: 80%;
+    }
+    .nav-links {
+        display: none; /* Hide main nav text on mobile to save space */
+    }
+    .auth-links {
+        gap: 10px;
+        margin-right: 0;
+    }
+    .auth-links a {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .auth-links i {
+        font-size: 20px;
+        margin: 0;
+    }
+    /* Hide text labels on narrow screens, keep icons */
+    .auth-links a {
+        flex-direction: column;
+        gap: 2px;
+        font-size: 10px;
+    }
+}

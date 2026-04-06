@@ -3,6 +3,8 @@ import "./Auth.css";
 import logo from "../../assets/logo.svg";
 import { useNavigate } from "react-router-dom";
 
+const API = "http://localhost/cakewala/backend";
+
 function Auth({ setUser }) {
   useEffect(() => {
     document.title = "User Login";
@@ -10,32 +12,71 @@ function Auth({ setUser }) {
 
   const [tab, setTab] = useState("login");
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
-  const [registerForm, setRegisterForm] = useState({ name: "", email: "", password: "", confirm: "" });
+  const [registerForm, setRegisterForm] = useState({ name: "", email: "", phone: "", password: "", confirm: "" });
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setErr("");
-    setUser({ name: loginForm.email.split("@")[0], email: loginForm.email });
-    setSuccess("Logged in successfully! Welcome back");
-    setTimeout(() => setSuccess(""), 1500);
-    navigate("/account");
+    setSuccess("");
+
+    try {
+      const res = await fetch(`${API}/auth.php?action=login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginForm),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        setUser(data.user);
+        setSuccess("Logged in successfully! Welcome back");
+        setTimeout(() => navigate("/account"), 1500);
+      } else {
+        setErr(data.error || "Login failed.");
+      }
+    } catch {
+      setErr("Connection error. Is XAMPP running?");
+    }
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    setErr("");
+    setSuccess("");
+
     if (registerForm.password !== registerForm.confirm) {
       setErr("Passwords do not match."); return;
     }
     if (registerForm.password.length < 6) {
       setErr("Password must be at least 6 characters."); return;
     }
-    setErr("");
-    setUser({ name: registerForm.name, email: registerForm.email });
-    setSuccess("Account created! Welcome to CakeWala!");
-    setTimeout(() => setSuccess(""), 1500);
+
+    try {
+      const res = await fetch(`${API}/auth.php?action=register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: registerForm.name,
+          email: registerForm.email,
+          phone: registerForm.phone,
+          password: registerForm.password
+        }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        setSuccess("Account created! You can now log in.");
+        setTab("login");
+        setLoginForm({ email: registerForm.email, password: "" });
+      } else {
+        setErr(data.error || "Registration failed.");
+      }
+    } catch {
+      setErr("Connection error. Is XAMPP running?");
+    }
   };
 
   return (
@@ -130,17 +171,28 @@ function Auth({ setUser }) {
                     onChange={(e) => setRegisterForm({ ...registerForm, name: e.target.value })}
                   />
                 </div>
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input
-                    className="form-input"
-                    type="email"
-                    required
-                    placeholder="you@email.com"
-                    value={registerForm.email}
-                    onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })}
-                  />
-                </div>
+                  <div className="form-group">
+                    <label className="form-label">Email Address</label>
+                    <input
+                      className="form-input"
+                      type="email"
+                      required
+                      placeholder="you@email.com"
+                      value={registerForm.email}
+                      onChange={(e) => setRegisterForm({ ...registerForm, email: e.target.value })}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label className="form-label">Phone Number</label>
+                    <input
+                      className="form-input"
+                      type="tel"
+                      required
+                      placeholder="9876543210"
+                      value={registerForm.phone}
+                      onChange={(e) => setRegisterForm({ ...registerForm, phone: e.target.value })}
+                    />
+                  </div>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">Password</label>

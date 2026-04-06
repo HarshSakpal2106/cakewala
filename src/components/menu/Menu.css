@@ -239,6 +239,8 @@
     font-size: 13px;
     font-weight: 600;
     transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+    border: none;
 }
 
 .menu-card-btn:hover {
@@ -331,4 +333,101 @@
 .menu-custom-btn:hover {
     background: #fdbd81;
     transform: translateY(-2px);
+}
+
+.login-notice {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: slideUpNotice 0.3s ease-out;
+}
+
+@keyframes slideUpNotice {
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+.login-notice-content {
+    background: #3d1f10;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.login-notice-content span {
+    font-size: 20px;
+}
+
+.login-notice-content a {
+    color: #fdbd81;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.login-notice-content a:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu-hero {
+        padding: 40px 15px 30px;
+    }
+    .menu-title {
+        font-size: 30px;
+    }
+    .menu-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .menu-controls {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    .menu-categories {
+        justify-content: center;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .menu-cat-btn {
+        flex-shrink: 0;
+        padding: 6px 16px;
+    }
+    .sort-select {
+        width: 100%;
+    }
+    .menu-results-count {
+        padding: 0 20px;
+        text-align: center;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 20px;
+    }
+    .menu-custom-banner {
+        padding: 40px 20px;
+    }
+    .menu-custom-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu-custom-btn {
+        width: 100%;
+    }
+    .login-notice-content {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }
